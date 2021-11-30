@@ -1,0 +1,89 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+</html>
+<!-- NAV -->
+<nav th:fragment="navbar" class="navbar personal-navbar">
+    <!-- LOGO -->
+    <a th:href="@{/menu}">
+        <img class="logo" th:src="@{/img/logo.png}" alt="logo">
+        <span class="navbar-brand mb-0 h1 name-logo">Beauty Estética</span>
+    </a>
+    <div class="social">
+
+        <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram items-social"></i></a>
+        <a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-f items-social"></i></a>
+        <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter items-social"></i></a>
+        <a target="_blank" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp items-social"></i></a>
+        <div class="btn-group">
+            <button class="btn session-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fas fa-user-circle items-social m-0"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end">
+                <div><a th:href="@{/}"><i class="far fa-user"></i>Iniciar sesión</a></div>
+                <hr>
+                <div><a th:href="@{/usuario/registrarse}"><i class="fas fa-file-alt"></i>Registrarse</a></div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- /NAV -->
+
+<!-- NAVBAR 2 -->
+<nav th:fragment="navbar2" class="navbar navbar-expand-lg personal-navbar2">
+    <div class="container-fluid">
+        <!-- HOME -->
+        <a class="navbar-brand ms-4 pt-1 personal-items" th:href="@{/menu}"> <i class="fas fa-home"></i>
+            Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- CUSTOMERS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Clientes
+                    </a>
+                    <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item personal-items-drop" th:href="@{/cliente/crear}">Crear</a></li>
+                        <li><a class="dropdown-item personal-items-drop" th:href="@{/cliente/lista}">Ver clientes</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Turnos
+                    </a>
+                    <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item personal-items-drop" href="formulario-turno.html">Nuevo</a></li>
+                        <li><a class="dropdown-item personal-items-drop" href="lista-turnos.html">Ver turnos</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item personal-items-drop" th:href="@{/producto/crear}">Agregar</a>
+                        </li>
+                        <li><a class="dropdown-item personal-items-drop" th:href="@{/producto/lista}">Ver productos</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="d-flex justify-content-end">
+                <h3 class="me-5" style="color:white">name</h3>
+                <form th:action="@{/logout}" method="POST"><button type="submit" class="btn personal-button2"><i
+                            class="fas fa-lock me-2"></i> Cerrar</button></form>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- NAVBAR 2 -->

@@ -1,0 +1,62 @@
+.item-label2 {
+    box-shadow: 0px 3px 5px #ffdde1;
+    ;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #dd5897;
+    background: #212529;
+}
+
+.position-registrar {
+    width: 83%;
+}
+
+.personal-button {
+    background-color: #67d7db;
+    color: #212529;
+    box-shadow: 0px 3px 5px #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 3.6rem;
+}
+
+.personal-button:hover {
+    background-color: #00d7df;
+    color: #ffdde1;
+    transition: 0.5s;
+}
+
+.personal-main2 {
+    background-image: url(../img/fondo2.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.personal-main3{
+    background-image: url(../img/fondo3.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.table-color{
+    background-color: #ffdde1;
+}
+
+.edit-color{
+    color: green;
+}
+
+.delete-button{
+    background-color: transparent;
+    border-color: transparent;
+    line-height: 1.25;
+}
+
+.delete-color{
+    color: red;
+}
+
+th, td{
+    white-space: nowrap;
+}

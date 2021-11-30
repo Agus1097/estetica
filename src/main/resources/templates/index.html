@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- FONT -->
+</head>
+
+<!-- BODY -->
+<body>
+    <!-- NAV -->
+    <nav th:replace="fragments :: navbar"></nav>
+    <!-- /NAV -->
+    
+    <main class="personal-main">
+        <div th:if="${error != null}" class="alert alert-success" th:text="${error}"></div>
+        <div th:if="${mensaje != null}" class="alert alert-success" th:text="${mensaje}"></div>
+        <div class="conteiner-sesion">
+            <div class="container row sesion ps-4 pe-5">
+                <div class="col-sm-6 ps-0">
+                    <img th:src="@{/img/logo.png}" class="sesionLogo" alt="LOGO SESION">
+                </div>
+                <div class="col-sm-6">
+                    <form th:action="@{/logincheck}" method="POST" name="logincheck">
+                        <div>
+                            <label for="exampleInputEmail1" class="form-label item-label">Usuario</label>
+                            <input type="email" name="username" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mt-3">
+                            <label for="exampleInputPassword1" class="form-label item-label">Contraseña</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="shadow-login">
+                            <a th:href="@{/usuario/registrarse}" class="col-5">
+                                <button type="button" class="btn personal-button-register">
+                                    Registrate
+                                </button>
+                            </a>
+                            <a class="col-5">
+                                <button type="submit" class="btn personal-button-login">
+                                    Ingresar
+                                </button>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<!-- /BODY -->
+
+<script src="https://kit.fontawesome.com/b3ecb498a1.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+</script>
+
+</html>

@@ -1,0 +1,143 @@
+/* HEADER */
+
+.personal-navbar {
+    background: #212529;
+    justify-content: start;
+}
+
+img {
+    width: 100%;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 5%;
+    margin-left: 1.75rem;
+    margin-right: 1rem;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+}
+
+.items-social {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    font-size: 200%;
+    color: #dd5897;
+}
+
+.items-social:hover {
+    color: #ffdde1;
+    box-shadow: 0px 0px 15px #ca132c;
+    background-color: #dd5897;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    text-shadow: 0px 0px 4px yellow;
+    transition: 0.5s;
+}
+
+.name-logo {
+    color: #dd5897;
+}
+
+.session-button {
+    padding: 0% 1rem;
+    border: none;
+    border-radius: none;
+}
+
+.session-button:focus {
+    box-shadow: none;
+}
+
+/* END HEADER */
+
+/* MAIN */
+
+.personal-main {
+    background-image: url(../img/fondo1.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.conteiner-sesion {
+    padding-top: 6.95rem;
+    padding-bottom: 6.95rem;
+}
+
+.sesion {
+    width: 50%;
+    margin: auto;
+    border: solid #ffdde1;
+    border-radius: 0.5rem;
+    background: #212529;
+    padding: 2rem;
+}
+
+.item-label {
+    box-shadow: 0px 3px 5px #dd5897;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #dd5897;
+}
+
+.personal-button-register {
+    border-radius: 0.25rem 0rem 0rem 0.25rem;
+    background-color: #67d7db;
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #212529;
+    width: 49.2%;
+}
+
+.personal-button-register:hover {
+    background-color: #00d7df;
+    color: #ffdde1;
+    transition: 0.5s;
+}
+
+.personal-button-login {
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
+    background-color: #dd5897;
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #212529;
+    width: 49.2%;
+}
+
+.personal-button-login:hover {
+    background-color: #dd0369;
+    color: #ffdde1;
+    transition: 0.5s;
+}
+
+.shadow-login {
+    box-shadow: -1px 3px 7px #ffdde1;
+    border-radius: 0.25rem;
+    margin-top: 2rem;
+}
+
+.sesionLogo {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+/* FIN MAIN */

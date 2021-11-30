@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+</head>
+
+<body>
+    <header>
+        <!-- NAV1 -->
+        <nav th:replace="fragments :: navbar"></nav>
+        <!-- /NAV1 -->
+
+        <!-- NAV2 -->
+        <nav th:replace="fragments :: navbar2"></nav>
+        <!-- /NAV2 -->
+    </header>
+
+    <!-- MAIN -->
+    <main class="personal-main2">
+        <div class="container personal-container">
+            <div class="row m-0">
+                <div class="personal-border col col-sm-3 mx-auto p-3">
+                    <a th:href="@{/cliente/lista}" class="link-menu">
+                        <div class="conteiner-image">
+                            <img class="imagen-menu" src="img/clientes.jpg" alt="clientes">
+                        </div>
+                        <h2 class="text-center pt-3 m-0 menu-option">CLIENTES</h2>
+                    </a>
+                </div>
+                <div class="personal-border col col-sm-3 mx-auto p-3">
+                    <a href="lista-turnos.html" class="link-menu">
+                        <div class="conteiner-image">
+                            <img class="imagen-menu" src="img/turnos.jpg" alt="turnos">
+                        </div>
+                        <h2 class="text-center pt-3 m-0 menu-option">TURNOS</h2>
+                    </a>
+                </div>
+                <div class="personal-border col col-sm-3 mx-auto p-3">
+                    <a th:href="@{/producto/lista}" class="link-menu">
+                        <div class="conteiner-image">
+                            <img class="imagen-menu" src="img/productos.jpg" alt="productos">
+                        </div>
+                        <h2 class="text-center pt-3 m-0 menu-option">PRODUCTOS</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/b3ecb498a1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

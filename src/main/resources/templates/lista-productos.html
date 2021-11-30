@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/menu-style.css}">
+    <link rel="stylesheet" th:href="@{/css/formularios.css}">
+</head>
+
+<body>
+    <header>
+        <!-- NAV1 -->
+        <nav th:replace="fragments :: navbar"></nav>
+        <!-- /NAV1 -->
+
+        <!-- NAV2 -->
+        <nav th:replace="fragments :: navbar2"></nav>
+        <!-- /NAV2 -->
+    </header>
+
+    <!-- MAIN -->
+    <main class="pt-5 px-4 personal-main">
+        <h1 th:text="${title}" class="mb-5"></h1>
+        <div th:if="${productos.isEmpty()}" style="text-align: center; margin-top: 100px; margin-bottom: 100px;">
+            <h5>Todavía no hay productos cargados. <a th:href="@{/producto/crear}">Cargar Producto.</a></h5>
+        </div>
+        <!-- TABLE -->
+        <div th:unless="${productos.isEmpty()}" class="table-responsive-sm">
+            <table class="table table-bordered">
+                <div class="d-inline" th:if="${action == 'eliminar'}">
+                    <a th:href="@{/producto/lista}"><button type="button" class="btn btn-primary">Lista</button></a>
+                </div>
+                <div class="d-inline" th:if="${action != 'eliminar'}">
+                    <a th:href="@{/producto/crear}"><button type="button" class="btn btn-success">Crear</button></a>
+                    <a th:href="@{/producto/lista/bajas}"><button type="button"
+                            class="btn btn-danger">Eliminados</button></a>
+                </div>
+                <!-- HEAD TABLE -->
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">
+                            <div class="d-flex justify-content-between">CÓDIGO
+                                <div><i class="fas fa-sort-numeric-down me-2"></i>
+                                    <i class="fas fa-sort-numeric-up me-2"></i></div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="d-flex justify-content-between">NOMBRE
+                                <div><i class="fas fa-sort-alpha-down me-2"></i>
+                                    <i class="fas fa-sort-alpha-up me-2"></i></div>
+                            </div>
+                        </th>
+                        <th scope="col">DESCRIPCIÓN</th>
+                        <th scope="col">COSTO</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">
+                            <div class="d-flex justify-content-between">STOCK
+                                <div><i class="fas fa-sort-numeric-down me-2"></i>
+                                    <i class="fas fa-sort-numeric-up me-2"></i></div>
+                            </div>
+                        </th>
+                        <th scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <!-- BODY TABLE -->
+                <tbody>
+                    <tr class="table-color">
+                        <th class="p-0" scope="row">
+                        </th>
+                        <td class="p-0">
+                            <form th:action="@{/producto/lista}">
+                                <div class="input-group">
+                                    <input type="text" class="form-control " placeholder="Buscar por nombre"
+                                        aria-label="Username" aria-describedby="basic-addon1" name="nombre"
+                                        th:value="${nombre}">
+                                    <button type="submit" class="btn btn-info">Search</button>
+                                    <button type="submit" class="btn btn-info">Reset</button>
+                                </div>
+                            </form>
+                        </td>
+                        <td class="p-0">
+                            <form th:action="@{/producto/lista}">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar por descripción"
+                                        aria-label="Username" aria-describedby="basic-addon1" name="descripcion"
+                                        th:value="${descripcion}">
+                                    <button type="submit" class="btn btn-info">Search</button>
+                                    <button type="submit" class="btn btn-info">Reset</button>
+                                </div>
+                            </form>
+                        </td>
+                        <td class="p-0">
+                        </td>
+                        <td class="p-0">
+                        </td>
+                        <td class="p-0">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr th:each="producto : ${productos}" class="table table-bordered table-color">
+                        <th th:text="${producto.codigo}" scope="row"></th>
+                        <td th:text="${producto.nombre}"></td>
+                        <td th:text="${producto.descripcion}"></td>
+                        <td th:text="${producto.costo}"></td>
+                        <td th:text="${producto.precio}"></td>
+                        <td th:text="${producto.stock}"></td>
+
+                        <td class="d-flex justify-content-around">
+                            <div class="d-flex" th:if="${action != 'eliminar'}">
+                                <a type="hidden" th:href="@{/producto/modificar/__${producto.id}__}"><i
+                                        class="fas fa-edit fa-lg edit-color"></i></a>
+                                <form th:action="@{/producto/dar-baja/__${producto.id}__}" method="post">
+                                    <button type="submit" class="delete-button"><i
+                                            class="fas fa-times-circle fa-lg delete-color"></i></button>
+                                </form>
+                            </div>
+                            <div class="d-flex" th:if="${action == 'eliminar'}">
+                                <form th:action="@{/producto/dar-alta/__${producto.id}__}" method="post">
+                                    <button type="submit" class="delete-button"><i
+                                            class="fas fa-times-circle fa-lg delete-color"></i></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/b3ecb498a1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Turno</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+    <header>
+        <!-- NAV1 -->
+        <nav th:replace="fragments :: navbar"></nav>
+        <!-- /NAV1 -->
+
+        <!-- NAV2 -->
+        <nav th:replace="fragments :: navbar2"></nav>
+        <!-- /NAV2 -->
+    </header>
+
+        <!-- MAIN -->
+        <main class="pt-5 px-4 personal-main2">
+            <h1 class="ms-2 mb-5">NUEVO TURNO</h1>
+            <!-- FORM -->
+            <form class="ms-4">
+                <!-- CLIENT -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label item-label2">Cliente</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <!-- USER -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label item-label2">Usuario</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <!-- DAY -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label item-label2">Fecha de Turno</label>
+                    <div class="col-sm-8">
+                        <input type="datetime-local" class="form-control" id="inputPassword3">
+                    </div>
+                </div>
+                <!-- DESCRIPTION -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label item-label2">Descripcion</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="position-registrar d-flex justify-content-end">
+                    <button type="submit" class="btn col-sm-2 personal-button">Crear</button>
+                </div>
+            </form>
+        </main>
+
+        <script src="https://kit.fontawesome.com/b3ecb498a1.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

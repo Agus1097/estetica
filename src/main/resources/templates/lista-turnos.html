@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+    <header>
+        <!-- NAV1 -->
+        <nav th:replace="fragments :: navbar"></nav>
+        <!-- /NAV1 -->
+
+        <!-- NAVBAR 2 -->
+        <nav class="navbar navbar-expand-lg personal-navbar2">
+            <div class="container-fluid">
+                <!-- HOME -->
+                <a class="navbar-brand ms-4 pt-1 personal-items" href="menu.html"> <i class="fas fa-home"></i>
+                    Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- CUSTOMERS -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Clientes
+                            </a>
+                            <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item personal-items-drop"
+                                        href="formulario-cliente.html">Crear</a></li>
+                                <li><a class="dropdown-item personal-items-drop" href="lista-clientes.html">Ver
+                                        clientes</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Turnos
+                            </a>
+                            <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item personal-items-drop" href="formulario-turno.html">Nuevo</a>
+                                </li>
+                                <li><a class="dropdown-item personal-items-drop" href="lista-turnos.html">Ver turnos</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle personal-items" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu personal-drop p-0" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item personal-items-drop"
+                                        href="formulario-producto.html">Agregar</a></li>
+                                <li><a class="dropdown-item personal-items-drop" href="lista-productos.html">Ver
+                                        productos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-end">
+                        <a href="index.html"><button type="submit" class="btn personal-button2"><i
+                                    class="fas fa-lock me-2"></i> Cerrar</button></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="pt-5 px-4 personal-main">
+        <h1 class="mb-5">LISTA DE TURNOS</h1>
+        <!-- TABLE -->
+        <table class="table table-bordered">
+            <!-- HEAD TABLE -->
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">
+                        <div class="d-flex justify-content-between">CLIENTE
+                            <div><i class="fas fa-sort-alpha-down me-2"></i>
+                                <i class="fas fa-sort-alpha-up me-2"></i></div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex justify-content-between">FECHA DE TURNO
+                            <div><i class="fas fa-sort-numeric-down me-2"></i>
+                                <i class="fas fa-sort-numeric-up me-2"></i></div>
+                        </div>
+                    </th>
+                    <th scope="col">DESCRIPCIÓN</th>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <!-- BODY TABLE -->
+            <tbody class="table-color">
+                <tr>
+                    <th class="p-0" scope="row">
+                        <div class="input-group">
+                            <input type="text" class="form-control " placeholder="Buscar por cliente" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </th>
+                    <td class="p-0">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar por fecha de turno" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                    <td class="p-0">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar por descripción" aria-label="Usarname"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                    <td class="p-0">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar por usuario" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="table-color">
+                    <th scope="row">Cliente</th>
+                    <td>Fecha turno</td>
+                    <td>Descripción</td>
+                    <td>usuario</td>
+                    <td class="d-flex justify-content-around">
+                        <i class="fas fa-edit fa-lg edit-color"></i>
+                        <i class="fas fa-times-circle fa-lg delete-color"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="https://kit.fontawesome.com/b3ecb498a1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
