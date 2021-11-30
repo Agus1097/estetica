@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hti50ja11id8n5n6?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Cordoba
-    username: pn2qp5juxyo75sb0
-    password: oth8q43y2w3e24ml
+    url: jdbc:mysql://yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/xllygw6fedsyr9ln?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Cordoba
+    username: uuhst3fxlq8mk9gy
+    password: tq3j4sp9h3h75vd7
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
